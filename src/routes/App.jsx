@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layuout from '../components/Layuout';
 import Checkout from '../containers/Checkout';
 import Home from '../containers/Home';
 import Information from '../containers/Information';
@@ -10,6 +11,7 @@ import Success from '../containers/Success';
 const App = () => {
   return (
     <BrowserRouter>
+      <Layuout>
         <Routes>
             <Route index element={<Home />} />
             <Route path='/checkout' element={<Checkout />} />
@@ -18,6 +20,7 @@ const App = () => {
             <Route path='/checkout/success' element={<Success />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
+      </Layuout>
     </BrowserRouter>
   )
 }
